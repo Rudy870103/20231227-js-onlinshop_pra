@@ -19,15 +19,39 @@
     width: 25%;
     border: 1px solid black;
   }
+  
 </style>
 <body>
   <div class="container">
     <table>
       <tr>
+        <td>產品</td>
+        <td>單價</td>
+        <td>數量</td>
+        <td>總價</td>
+      </tr>
+      <tr>
         <td><img src="./img/1.png" alt="" width="100%"></td>
-        <td>單價<input type="text" name="productPrice" id="productPrice"></td>
-        <td>數量<input type="number" name="productCount" id="productCount" value="1"></td>
-        <td>總價<input type="text" name="productTotal" id="productTotal"></td>
+        <td><input type="text" name="productPrice" id="productPrice" value="888"></td>
+        <td><input type="number" name="productCount" id="productCount" value="0"></td>
+        <td><input type="text" name="productTotal" id="productTotal"></td>
+      </tr>
+      <tr>
+        <td><img src="./img/2.png" alt="" width="100%"></td>
+        <td><input type="text" name="productPrice2" id="productPrice2" value="1888"></td>
+        <td><input type="number" name="productCount2" id="productCount2" value="0"></td>
+        <td><input type="text" name="productTotal2" id="productTotal2"></td>
+      </tr>
+      <tr>
+        <td><img src="./img/3.png" alt="" width="100%"></td>
+        <td><input type="text" name="productPrice3" id="productPrice3" value="8888"></td>
+        <td><input type="number" name="productCount3" id="productCount3" value="0"></td>
+        <td><input type="text" name="productTotal3" id="productTotal3"></td>
+      </tr>
+      <tr>
+        <td colspan="2"></td>
+        <td colspan="2"><button type="submit" id="btn">結帳</button>&nbsp&nbsp&nbsp&nbsp
+          <input type="text" name="total" id="total"></td>
       </tr>
     </table>
    <!-- <button type="submit" name="count" id="count" >計算</button> -->
@@ -36,14 +60,38 @@
     let productPrice = document.getElementById('productPrice');
     let productCount = document.getElementById('productCount');
     let productTotal = document.getElementById('productTotal');
+    let productPrice2 = document.getElementById('productPrice2');
+    let productCount2 = document.getElementById('productCount2');
+    let productTotal2 = document.getElementById('productTotal2');
+    let productPrice3 = document.getElementById('productPrice3');
+    let productCount3 = document.getElementById('productCount3');
+    let productTotal3 = document.getElementById('productTotal3');
+    let btn = document.getElementById('btn');
+    let total = document.getElementById('total');
     // let count = document.getElementById('count');
 
     productPrice.addEventListener('input',count);
     productCount.addEventListener('input',count);
 
+    productPrice2.addEventListener('input',count2);
+    productCount2.addEventListener('input',count2);
+
+    productPrice3.addEventListener('input',count3);
+    productCount3.addEventListener('input',count3);
+
     
+    btn.addEventListener('click',function(){
+      total.value=parseInt(productTotal.value)+parseInt(productTotal2.value)+parseInt(productTotal3.value);
+    })
+
     function count(){
       productTotal.value=productPrice.value*productCount.value;
+    }
+    function count2(){
+      productTotal2.value=productPrice2.value*productCount2.value;
+    }
+    function count3(){
+      productTotal3.value=productPrice3.value*productCount3.value;
     }
     
 
