@@ -16,10 +16,17 @@
         body {
             background-color: rgb(0, 28, 53);
         }
-
+        .shop{
+            background-image: url(./img/shop-banner.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+        
         .shop table {
             width: 50%;
-            background-color: rgb(185, 185, 185);
+            background-color: rgba(255, 255, 255, .5);
+            backdrop-filter: blur(20px);
             text-align: center;
             border: 1px solid white;
             border-radius: 20px;
@@ -32,7 +39,7 @@
             padding: 10px;
             border: 1px solid black;
         }
-
+    
         .container-fluid {
             padding: 0px 80px;
         }
@@ -206,7 +213,8 @@
 
         <!-- shop -->
         <div class="shop mb-5">
-            <table>
+            <div class="product">
+                <table>
                 <tr style="font-size: 20px;">
                     <th>產品</th>
                     <th>單價</th>
@@ -217,28 +225,30 @@
                     <td><img src="./img/1.png" alt="" width="100%"></td>
                     <td><input type="text" name="productPrice" id="productPrice" value="888"></td>
                     <td><input type="number" name="productCount" id="productCount" value="0"></td>
-                    <td><input type="text" name="productTotal" id="productTotal"></td>
+                    <td><input type="text" name="productTotal" id="productTotal" value="0" readonly></td>
                 </tr>
                 <tr>
                     <td><img src="./img/2.png" alt="" width="100%"></td>
                     <td><input type="text" name="productPrice2" id="productPrice2" value="1888"></td>
                     <td><input type="number" name="productCount2" id="productCount2" value="0"></td>
-                    <td><input type="text" name="productTotal2" id="productTotal2"></td>
+                    <td><input type="text" name="productTotal2" id="productTotal2" value="0" readonly></td>
                 </tr>
                 <tr>
                     <td><img src="./img/3.png" alt="" width="100%"></td>
                     <td><input type="text" name="productPrice3" id="productPrice3" value="8888"></td>
                     <td><input type="number" name="productCount3" id="productCount3" value="0"></td>
-                    <td><input type="text" name="productTotal3" id="productTotal3"></td>
+                    <td><input type="text" name="productTotal3" id="productTotal3" value="0" readonly></td>
                 </tr>
                 <tr>
                     <td colspan="2"></td>
-                    <td colspan="2"><button type="submit" id="btn">結帳</button>&nbsp&nbsp&nbsp&nbsp
+                    <td colspan="2"><button type="submit" id="btn" class="btn btn-primary">結帳</button>&nbsp&nbsp&nbsp&nbsp
                         <input type="text" name="total" id="total">
                     </td>
                 </tr>
             </table>
-            <!-- <button type="submit" name="count" id="count" >計算</button> -->
+            </div>
+            
+            
         </div>
 
         <!-- shop end -->
